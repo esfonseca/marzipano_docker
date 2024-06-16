@@ -1,7 +1,7 @@
-FROM nginx:lastest
+FROM nginx:alpine
 
-WORKDIR /app
+COPY . /usr/share/nginx/html
 
-COPY . /usr/share/nginx/html/
+EXPOSE 80
 
-RUN npm install marzipano
+CMD ["nginx", "-g", "daemon off;"]
